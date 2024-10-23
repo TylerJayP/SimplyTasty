@@ -1,0 +1,28 @@
+CREATE DATABASE SimplyTasty;
+
+USE SimplyTasty;
+
+-- DROP TABLE Recipe_DietaryOptions;
+-- DROP TABLE MealKit;
+-- DROP TABLE Recipe;
+
+CREATE TABLE IF NOT EXISTS Recipe(
+Recipe_id INT AUTO_INCREMENT PRIMARY KEY,
+Recipe_name VARCHAR(60) NOT NULL,
+Cusine_type VARCHAR(60) DEFAULT NULL
+);
+
+CREATE TABLE IF NOT EXISTS MealKit(
+Mealkit_id INT AUTO_INCREMENT PRIMARY KEY,
+Recipe_id INT,
+Customization_options INT DEFAULT NULL, 
+
+FOREIGN KEY (Recipe_id) REFERENCES Recipe (Recipe_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS Recipe_DietaryOptions(
+Dietary_options_id INT AUTO_INCREMENT PRIMARY KEY,
+Recipe_id INT,
+
+FOREIGN KEY (Recipe_id) REFERENCES Recipe(Recipe_id) ON DELETE CASCADE
+);
