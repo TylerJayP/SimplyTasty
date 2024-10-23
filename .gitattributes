@@ -1,0 +1,24 @@
+# Set the default behavior to automatically normalize line endings.
+* text=auto
+
+# Specify line endings for specific file types.
+*.sql text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.md text eol=lf
+
+# Treat binary files
+*.png binary
+*.jpg binary
+*.gif binary
+*.zip binary
+*.exe binary
+
+# Ensure that XML files use LF line endings
+*.xml text eol=lf
+
+# Force CRLF for Windows batch files
+*.bat text eol=crlf
+
+# You can add additional settings for other file types as needed
