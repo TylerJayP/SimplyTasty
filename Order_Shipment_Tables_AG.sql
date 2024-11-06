@@ -4,6 +4,8 @@ CREATE TABLE IF NOT EXISTS Orders(
 Order_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 Order_price decimal(5,2) NOT NULL,
 Order_date DATE DEFAULT NULL,
+Shipment_id INT,
+Customer_id INT,
 FOREIGN KEY (Shipment_id) REFERENCES Shipments(Shipment_id),
 FOREIGN KEY (Customer_id) REFERENCES Customers(Customer_id)
 );
@@ -14,6 +16,7 @@ Shipment_status varchar(60),
 Shipment_date DATE default NULL,
 Shipment_address varchar(255),
 Destination_address varchar(255),
+Customer_id INT,
 FOREIGN KEY(Customer_id) REFERENCES Customers(Customer_id)
 );
 
