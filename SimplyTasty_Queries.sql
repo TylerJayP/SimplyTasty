@@ -15,4 +15,4 @@ SELECT * FROM orders;
 SELECT * FROM recipe;
 SELECT * FROM recipe_dietaryoptions;
 SELECT * FROM recipe_ingredients;
-SELECT * FROM shipments;
+SELECT s.Shipment_id, s.Shipment_status, s.Shipment_date, s.Shipment_address, c.Address AS destination_address FROM shipments s RIGHT JOIN customer c on s.Customer_id = c.Customer_id;
